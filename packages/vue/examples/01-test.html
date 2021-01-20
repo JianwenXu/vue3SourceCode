@@ -1,0 +1,19 @@
+<div id="app">
+  {{ counter }}
+</div>
+
+<script src="../dist/vue.global.js"></script>
+<script>
+  // 工厂函数
+  const { createApp } = Vue;
+
+  // 1. new Vue => createApp 更加函数化
+  // 2. 挂载 $mount => mount
+  createApp({
+    data() {
+      return {
+        counter: 1
+      }
+    },
+  }).mount('#app')
+</script>

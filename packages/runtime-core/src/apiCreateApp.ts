@@ -130,6 +130,7 @@ export function createAppAPI<HostElement>(
       rootProps = null
     }
 
+    // 一些 mixin, directive 什么的对象
     const context = createAppContext()
     const installedPlugins = new Set()
 

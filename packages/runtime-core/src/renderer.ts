@@ -1253,6 +1253,7 @@ function baseCreateRenderer(
     if (__DEV__) {
       startMeasure(instance, `init`)
     }
+    // initProps, initSlots
     setupComponent(instance)
     if (__DEV__) {
       endMeasure(instance, `init`)
@@ -1272,6 +1273,7 @@ function baseCreateRenderer(
       return
     }
 
+    // 声明 instance 的 update 方法
     setupRenderEffect(
       instance,
       initialVNode,

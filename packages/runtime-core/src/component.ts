@@ -568,6 +568,7 @@ function setupStatefulComponent(
   }
   // 2. call setup()
   const { setup } = Component
+  // setup 和其他的二选其一 setup 优先级更高
   if (setup) {
     const setupContext = (instance.setupContext =
       setup.length > 1 ? createSetupContext(instance) : null)
@@ -693,6 +694,8 @@ function finishComponentSetup(
     // for runtime-compiled render functions using `with` blocks, the render
     // proxy used needs a different `has` handler which is more performant and
     // also only allows a whitelist of globals to fallthrough.
+    // 对于使用带有`with`块的运行时编译的渲染函数，使用的渲染代理需要一个不同的`has'处理函数，
+    // 该处理函数性能更高，并且仅允许全局白名单失效。
     if (instance.render._rc) {
       instance.withProxy = new Proxy(
         instance.ctx,
